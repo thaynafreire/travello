@@ -22,6 +22,15 @@ function validarDados(nome_completo, username, email, id_pais, senha){
     return true
 }
 
+
+
+
+
+
+
+
+
+
 export async function carregarPaises() {
   try {
     const response = await fetch('http://localhost:8080/v1/travello/paises')
