@@ -22,18 +22,9 @@ function validarDados(nome_completo, username, email, id_pais, senha){
     return true
 }
 
-
-
-
-
-
-
-
-
-
 export async function carregarPaises() {
   try {
-    const response = await fetch('http://localhost:8080/v1/travello/paises')
+    const response = await fetch('http://localhost:8080/v1/travello/pais')
     const dados = await response.json()
 
     const select = document.getElementById('location')
@@ -52,14 +43,17 @@ export async function carregarPaises() {
 
 async function cadastrar() {
   try {
-    const foto_perfil = document.getElementById('foto_perfil').value
-    const nome_completo = document.getElementById('nome_completo').value
+    const foto_perfil = 'https://i.pinimg.com/736x/2c/47/d5/2c47d5dd5b532f83bb55c4cd6f5bd1ef.jpg'
+    const nome_completo = document.getElementById('name').value
     const username = document.getElementById('username').value
     const email = document.getElementById('email').value
-    const senha = document.getElementById('senha').value
-    const biografia = document.getElementById('biografia').value
-    const id_pais = document.getElementById('location').value // string aqui
-    const data_cadastro = new Date().toISOString()
+    const senha = document.getElementById('password').value
+    const biografia = 'Sharing memories and inspiring new adventures!'
+    const id_pais = document.getElementById('location').value 
+    const dataAtual = new Date()
+    const data_cadastro = dataAtual.toISOString().split('T')[0]
+
+    if (!validarDados(nome_completo, username, email, id_pais, senha)) return
 
     const data = {
       foto_perfil,
@@ -93,15 +87,13 @@ async function cadastrar() {
 
     } catch (error) {
       console.error('Erro ao fazer cadastro:', error)
-      mostrarToast('Something went wrong. Please try again later.')
+      mostrarToast('Something went wrong. Please try again later.', "#f44336")
     }
   } catch (error) {
     console.error('Erro geral:', error)
   }
 }
 
-
-
-
 // adiciona o clique no botão de cadastro
 document.getElementById('register').addEventListener('click', cadastrar)
+
