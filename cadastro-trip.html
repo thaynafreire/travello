@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="./js/main.js" defer></script>
+    <script src="./js/cadastro-viagem.js" defer type="module"></script>
+    <link rel="stylesheet" href="./cadastro-viagem.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<!-- toastify CSS -->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+<!-- toastify JS -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <title>Travello</title>
+</head>
+<body>
+    <header>
+        <img src="./img/logo-white.png" alt="logotipo">
+        <div class="foto-perfil">
+            <img src="https://i.pinimg.com/736x/2c/47/d5/2c47d5dd5b532f83bb55c4cd6f5bd1ef.jpg" alt="Foto de perfil do usuário">
+        </div>
+    </header>
+    <main>
+        <div class="trip-container-header">
+            <h3>New Trip</h3>
+            <select id="category">
+                <option value="">Category</option>
+                <!-- opções serão adicionadas via JavaScript -->
+            </select><br>
+        </div>
+
+        <div class="trip-form">
+            <form>
+                <label for="title">Title</label><br>
+                <input type="text" id="email"><br>
+
+                <div class="double-line">
+                    <div class="field">
+                        <label for="cover-photo">Choose a cover photo for your trip.</label>
+                        <input type="file" id="cover-photo" accept="image/*">
+                    </div>
+
+                    <div class="field">
+                        <label for="secondary-photo">Choose a nice photo from your trip.</label>
+                        <input type="file" id="secondary-photo" accept="image/*">
+                    </div>
+                </div>
+
+                <label for="description">Tell us about your trip.</label><br>
+                <input type="text" id="description"><br>
+
+                <div class="double-line">
+                    <div class="field">
+                        <label for="departure-date">Departure date</label><br>
+                        <input type="date" id="departure-date"><br>
+                    </div>
+
+                    <div class="field">
+                        <label for="return-date">Return date</label><br>
+                        <input type="date" id="return-date"><br>
+                    </div>
+                </div>
+
+                <label for="location">Location</label><br>
+                <input type="text" id="name" placeholder="Name"><br>
+                <input type="text" id="number" placeholder="Number"><br>
+                <input type="text" id="postal-code" placeholder="Postal code"><br>
+                <select id="location">
+                    <option value="">Country</option>
+                    <!-- opções serão adicionadas via JavaScript -->
+                </select><br>
+
+                <h3>Locais visitados</h3>
+                <div id="locaisVisitadosContainer"></div>
+                <button type="button" onclick="adicionarLocal()">Adicionar Local Visitado</button>
+
+                <br /><br />
+                <button type="submit">Salvar Viagem</button>
+
+            </form>
+        </div>
+    </main>
+    
+</body>
+</html>
