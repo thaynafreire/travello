@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script type="module" src="./js/main.js" defer></script>
-        <script src="./js/usuario.js" defer type="module"></script>
-        <link rel="stylesheet" href="./style.css">
+
+        <link rel="stylesheet" href="./style-login.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -21,52 +21,37 @@
     <div class="login-box">
 
         <div class="left">
-            <img src="img/main-image.png" alt="">
-        </div>
-
-        <div class="right">
             <img src="img/logo-dark.png" alt="">
-            <h2>Welcome to Travello</h2>
-            <h4>Travello is a platform to capture, share, and discover travel experiences in a visual, light, and interactive way. It works like a digital Travel Diary where travelers share photos, and tips, connecting people and inspiring new adventures.</h4>
-            <p id="create">Create an account</p>
+            <h2>Welcome Back</h2>
+            <h4>It's good to see you again.</h4>
+            <p id="create">Sign in to your account</p>
             <form>
-                <div class="double-line">
-                    <div class="field">
-                        <label for="name">Name</label>
-                        <input type="text" id="name">
-                    </div>
-
-                    <div class="field">
-                        <label for="username">Username</label>
-                        <input type="text" id="username">
-                    </div>
-                </div>
-
-                <label for="email">E-mail</label><br>
-                <input type="text" id="email"><br>
-                <label for="location">Country</label><br>
-                <select id="location">
-                    <option value="">Select a country</option>
-                    <!-- opções serão adicionadas via JavaScript -->
-                </select><br>
+                <label for="email">Email or username</label>
+                <input type="text" id="email">
 
                 <label for="password">Password</label><br>
                 <div class="icon-password">
                     <input type="password" id="password">
                     <img src="img/lock.jpg" alt="lock icon">
                 </div>
+                <a id="esqueceu-a-senha" href="esqueceu_senha.html" class="link">Forgot Password?</a>
 
-                <div class="register">
-                    <button type="button" class="button" id="register">Register</button>
+                <div class="login">
+                    <button type="button" class="button" id="login">Sign in</button>
                 </div>
 
-                <p id="message-login">Already have an account? <a href="login.html" class="link">Sign in.</a></p>
+                <script src="./js/usuario-login.js" defer type="module"></script>
+
+                <p id="message-login">Don't have an account? <a href="cadastro-user.html" class="link">Sign up.</a></p>
 
             </form>
         </div>
 
-    </div>
+        <div class="right">
+            <img src="img/main-image.png" alt="">
+        </div>
 
+    </div>
     
 </body>
 </html>

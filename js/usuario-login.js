@@ -1,18 +1,22 @@
 'use strict'
 
-//toast
+// Função para exibir toast
 function mostrarToast(mensagem, corFundo = "#4CAF50") {
     Toastify({
         text: mensagem,
         duration: 3000,
         gravity: "top",
         position: "right",
-        backgroundColor: corFundo,
-        stopOnFocus: true
+        style: {
+            background: corFundo
+        },
+        stopOnFocus: false
     }).showToast()
 }
 
+// Validação de campos
 function validarDados(email, senha) {
+    console.log('Validando dados:', { email, senha })
     if (email === '' || senha === '') {
         mostrarToast("Please, complete all required fields", "#f44336")
         return false 
@@ -20,19 +24,20 @@ function validarDados(email, senha) {
     return true 
 }
 
+// Função principal de login
 async function login() {
+    console.log('Iniciando função login...')
 
     const email = document.getElementById('email').value
     const senha = document.getElementById('password').value
 
-    const data = {
-        email: email,
-        senha: senha
-    }
+    console.log('Dados capturados do formulário:', { email, senha })
 
-    const urlLogin = 'https://back-spider.vercel.app/login'
-    const urlUsuarios = 'https://back-spider.vercel.app/user/listarUsers'
+    if (!validarDados(email, senha)) return
 
+    const data = { email, senha }
+    const urlLogin = 'http://localhost:8080/v1/travello/usuario/login'
+    const urlUsuarios = 'http://localhost:8080/v1/travello/usuario'
 
     const options = {
         method: 'POST', 
@@ -43,42 +48,40 @@ async function login() {
     }
 
     try {
-        
-        const response = await fetch(urlLogin, options) 
-        const result = await response.json() 
+        console.log('Enviando requisição para login...')
 
-        // verificando se fez login
-        if (result.success) {
-            alert('Login bem-sucedido!')
+        const response = await fetch(urlLogin, options)
+        const result = await response.json()
 
-            const respostaUsuarios = await fetch(urlUsuarios)  //requisição para pegar a lista de usuários
+        console.log('Resposta da API de login:', result)
 
-            const listaUsuarios = await respostaUsuarios.json() //converte a resposta da lista em json
+        if (result.status) {
+            mostrarToast("Welcome!")
 
-            // procura o usuário na lista de usuarios com base no email 
-            const usuarioLogado = listaUsuarios.find(usuario => usuario.email === email)
+            console.log('Login realizado com sucesso! Buscando lista de usuários...')
 
-            // se o usuário foi encontrado na lista
+            const respostaUsuarios = await fetch(urlUsuarios)
+            const listaUsuarios = await respostaUsuarios.json()
+
+            console.log('Lista de usuários recebida:', listaUsuarios)
+
+            const usuarioLogado = listaUsuarios.usuarios.find(usuario => usuario.email === email)
+
             if (usuarioLogado) {
-                // salva o id 
                 localStorage.setItem('idUser', usuarioLogado.id)
-                console.log('id do usuário salvo no localstorage:', usuarioLogado.id)
+                console.log('ID do usuário salvo no localStorage:', usuarioLogado.id)
             } else {
-                // Caso não encontre o usuário na lista
                 console.warn('Usuário não encontrado na lista!')
             }
         } else {
-            // Caso o login falhe
+            console.warn('Login falhou. Email ou senha incorretos.')
             mostrarToast('Incorrect email or password.')
         }
     } catch (error) {
-        // Se acontecer algum erro com a requisição
         console.error('Erro ao fazer login:', error)
         mostrarToast('Something went wrong. Please try again later.', "#f44336")
     }
 }
 
-// Adiciona um ouvinte de evento ao botão de login
-// Quando o botão for clicado, ele executa a função login()
-document.getElementById('botao-login')
+document.getElementById('login')
     .addEventListener('click', login)

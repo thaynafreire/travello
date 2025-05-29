@@ -28,11 +28,13 @@ export async function carregarPaises() {
     const dados = await response.json()
 
     const select = document.getElementById('location')
+    if (!select) return // se o elemento não existe, para aqui sem erro
+
     select.innerHTML = '' // limpa antes de inserir
 
     dados.paises.forEach(pais => {
       const option = document.createElement('option')
-      option.value = pais.id       // usa o ID aqui, não o nome
+      option.value = pais.id
       option.textContent = pais.nome
       select.appendChild(option)
     })
@@ -83,7 +85,10 @@ async function cadastrar() {
 
       const result = await response.json()
       mostrarToast('Welcome! Your registration was successful!')
-      //window.location.href = 'index.html'
+      setTimeout(() => {
+        window.location.href = 'index.html'
+      }, 1000)
+
 
     } catch (error) {
       console.error('Erro ao fazer cadastro:', error)
@@ -94,6 +99,5 @@ async function cadastrar() {
   }
 }
 
-// adiciona o clique no botão de cadastro
-document.getElementById('register').addEventListener('click', cadastrar)
-
+document.getElementById('register')
+    .addEventListener('click', cadastrar)

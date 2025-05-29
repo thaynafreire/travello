@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="module" src="./js/main.js" defer></script>
+        <script src="./js/usuario.js" defer type="module"></script>
+        <link rel="stylesheet" href="./style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<!-- toastify CSS -->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+<!-- toastify JS -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+    <title>Travello</title>
+</head>
+<body id="pag">
+    <div class="login-box">
+
+        <div class="left">
+            <img src="img/main-image.png" alt="">
+        </div>
+
+        <div class="right">
+            <img src="img/logo-dark.png" alt="">
+            <h2>Welcome to Travello</h2>
+            <h4>Travello is a platform to capture, share, and discover travel experiences in a visual, light, and interactive way. It works like a digital Travel Diary where travelers share photos, and tips, connecting people and inspiring new adventures.</h4>
+            <p id="create">Create an account</p>
+            <form>
+                <div class="double-line">
+                    <div class="field">
+                        <label for="name">Name</label>
+                        <input type="text" id="name">
+                    </div>
+
+                    <div class="field">
+                        <label for="username">Username</label>
+                        <input type="text" id="username">
+                    </div>
+                </div>
+
+                <label for="email">E-mail</label><br>
+                <input type="text" id="email"><br>
+                <label for="location">Country</label><br>
+                <select id="location">
+                    <option value="">Select a country</option>
+                    <!-- opções serão adicionadas via JavaScript -->
+                </select><br>
+
+                <label for="password">Password</label><br>
+                <div class="icon-password">
+                    <input type="password" id="password">
+                    <img src="img/lock.jpg" alt="lock icon">
+                </div>
+
+                <div class="register">
+                    <button type="button" class="button" id="register">Register</button>
+                </div>
+
+                <p id="message-login">Already have an account? <a href="index.html" class="link">Sign in.</a></p>
+
+            </form>
+        </div>
+
+    </div>
+
+    
+</body>
+</html>
