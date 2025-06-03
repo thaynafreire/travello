@@ -24,7 +24,7 @@ function validarDados(nome_completo, username, email, id_pais, senha){
 
 export async function carregarPaises() {
   try {
-    const response = await fetch('http://localhost:8080/v1/travello/pais')
+    const response = await fetch('http://10.107.134.38:8080/v1/travello/pais')
     const dados = await response.json()
 
     const select = document.getElementById('location')
@@ -32,7 +32,9 @@ export async function carregarPaises() {
 
     select.innerHTML = '' // limpa antes de inserir
 
-    dados.paises.forEach(pais => {
+    const paisesOrdenados = dados.paises.sort((a, b) => a.nome.localeCompare(b.nome))
+
+    paisesOrdenados.forEach(pais => {
       const option = document.createElement('option')
       option.value = pais.id
       option.textContent = pais.nome
@@ -45,7 +47,7 @@ export async function carregarPaises() {
 
 async function cadastrar() {
   try {
-    const foto_perfil = 'https://i.pinimg.com/736x/2c/47/d5/2c47d5dd5b532f83bb55c4cd6f5bd1ef.jpg'
+    const foto_perfil = 'https://img.freepik.com/vetores-premium/icone-perfil-simples-cor-branco-icone_1076610-50204.jpg'
     const nome_completo = document.getElementById('name').value
     const username = document.getElementById('username').value
     const email = document.getElementById('email').value
@@ -68,7 +70,7 @@ async function cadastrar() {
       data_cadastro
     }
 
-    const url = 'http://localhost:8080/v1/travello/usuario'
+    const url = 'http://10.107.134.38:8080/v1/travello/usuario'
 
     try {
       console.log('Dados enviados:', JSON.stringify(data, null, 2))
@@ -99,5 +101,11 @@ async function cadastrar() {
   }
 }
 
-document.getElementById('register')
-    .addEventListener('click', cadastrar)
+const botaoCadastrar = document.getElementById('register')
+
+if (botaoCadastrar) {
+  botaoCadastrar.addEventListener('click', cadastrar)
+}
+
+//document.getElementById('register')
+//    .addEventListener('click', cadastrar)

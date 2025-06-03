@@ -36,8 +36,8 @@ async function login() {
     if (!validarDados(email, senha)) return
 
     const data = { email, senha }
-    const urlLogin = 'http://localhost:8080/v1/travello/usuario/login'
-    const urlUsuarios = 'http://localhost:8080/v1/travello/usuario'
+    const urlLogin = 'http://10.107.134.38:8080/v1/travello/usuario/login'
+    const urlUsuarios = 'http://10.107.134.38:8080/v1/travello/usuario'
 
     const options = {
         method: 'POST', 
@@ -65,11 +65,19 @@ async function login() {
 
             console.log('Lista de usuários recebida:', listaUsuarios)
 
-            const usuarioLogado = listaUsuarios.usuarios.find(usuario => usuario.email === email)
+            const usuarioLogado = listaUsuarios.usuarios.find(usuario => {
+                const entrada = email.toLowerCase()
+                return (
+                    (usuario.email && usuario.email.toLowerCase() === entrada) ||
+                    (usuario.username && usuario.username.toLowerCase() === entrada)
+                )
+            })
+            
 
             if (usuarioLogado) {
                 localStorage.setItem('idUser', usuarioLogado.id)
                 console.log('ID do usuário salvo no localStorage:', usuarioLogado.id)
+                window.location.href = 'cadastro-trip.html'
             } else {
                 console.warn('Usuário não encontrado na lista!')
             }
