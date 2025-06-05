@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="module" src="./js/main.js" defer></script>
     <script src="./js/cadastro-viagem.js" defer type="module"></script>
+    <script type="module" src="./js/main.js" defer></script>
     <link rel="stylesheet" href="./cadastro-viagem.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,7 +40,7 @@
     
                     <div class="double-line">
                         <div class="field">
-                            <label for="cover-photo">Choose a cover photo for your trip.</label>
+                            <label for="cover-photo" id="label-file">Choose a cover photo for your trip.</label>
                             <label for="cover-photo" class="custom-file-button">
                                 <img src="img/new-file.png" alt="upload icon">
                                 Add file
@@ -54,7 +54,7 @@
                                 <img src="img/new-file.png" alt="upload icon">
                                 Add file
                             </label>
-                            <input type="file" id="secondary-photo" accept="image/*">
+                             <input type="file" id="secondary-photo" accept="image/*">
                         </div>
                     </div>
     

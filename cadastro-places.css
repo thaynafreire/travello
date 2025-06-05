@@ -27,7 +27,6 @@ body{
     display: flex;
 }
 
-
 header {
     width: 100%;
     height: 8vh;
@@ -55,7 +54,6 @@ header img{
     height: auto;
 }
 
-
 main {
     font-family: "Montserrat", sans-serif;
     margin-top: 16vh;
@@ -76,7 +74,7 @@ main {
     scroll-behavior: smooth;
 }
 
-.trip-container-header {
+.place-container-header {
     margin-top: 6vh;
     width: 100%;
     height: 10%;
@@ -90,124 +88,42 @@ main {
     margin-bottom: 3vh;
 }
 
-.trip-container-header h3 {
-    font-size: 1.5rem;
+.place-container-header h3 {
+    font-size: 2rem;
     font-weight: 600;
     color: #FB923D;
 }
 
-.trip-container-header select {
-    font-family: "Montserrat", sans-serif;
-    font-size: 1rem;
-    padding: 0.5rem;
-    border: 0px solid #ccc;
-    background-color: #F4F4F4;
-    color: #545454;
-    font-weight: 600;
-    margin-left: auto;
-}
-
-label{
-    font-size: 1rem;
-    font-weight: 600;
-    color: #545454;
-}
-
-input[type="text"]{
-    font-family: "Montserrat", sans-serif;
-    width: 100%;
-    padding: 0.6vw 0.6vw;
-    border-radius: 10px;
-    border: 1px solid #B1B1B1;
-    background-color: #F0F0F0;
-}
-
-input[type="text"]:focus{
-    border: 2px solid #FB923D; 
-    outline: none;
-}
-
-#title{
-    margin-bottom: 1.2vw;
-}
-
 .double-line {
-    display: flex;
-    gap: 1vw;
-    margin-bottom: 1.8vw;
+  display: flex;
+  justify-content: space-between;
 }
-  
-.field {
+
+.left {
+    padding: 0.8vw;
+    flex: 1;
+    display: flex;
+    flex-direction: column; 
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.right {
+    flex: 1;
+    padding: 0.8vw;
     display: flex;
     flex-direction: column;
-    flex: 1;
-}
-  
-input[type="file"] {
-    display: none;
+    justify-content: flex-start;
+    align-items: flex-start; 
 }
 
-.custom-file-button {
-    display: inline-flex;
-    align-items: center;
-    background-color: #FB923D;
-    color: white;
-    width: 5.6vw;
-    height: 1.7vw;
-    padding: 1vh 1vw;
-    border-radius: 13px;
-    font-size: 0.8rem;
-    font-weight: 500;
-    margin-top: 0.5vh;
-    cursor: pointer;
-    transition: background-color 0.2s;
-    gap: 10px;
+h5{
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #545454;
 }
 
-.custom-file-button img {
-    width: 0.9vw;
-    height: auto;
-    object-fit: contain;
-}
-
-.custom-file-button:hover {
-    background-color: #fa9b4e;
-}
-
-#description{
-    margin-top: 0.3vh;
-    font-family: "Montserrat", sans-serif;
-    width: 100%;
-    height: 20vh;
-    padding: 0.8vw 1vw;
-    border-radius: 10px;
-    border: 1px solid #B1B1B1;
-    background-color: #F0F0F0;
-    font-size: 0.9rem;
-    margin-bottom: 4vh;
-}
-
-#description:focus{
-    border: 2px solid #FB923D; 
-    outline: none;
-}
-
-input[type="date"] {
-    margin-top: 0.5vh;
-    background-color: #F0F0F0; 
-    color: #545454;            
-    font-size: 1rem;           
-    border: 1px solid #B1B1B1; 
-    border-radius: 5px;        
-    padding: 0.40vh 0.20vw;         
-    outline: none;             
-    box-sizing: border-box;    
-    width: 100%;  
-    cursor: pointer;        
-    font-weight: 500;     
-}
-
-#location{
+#name{
     margin-top: 1vh;
     font-family: "Montserrat", sans-serif;
     width: 100%;
@@ -217,37 +133,138 @@ input[type="date"] {
     background-color: #F0F0F0;
     color: #757779;
     font-weight: 400;
-    margin-bottom: 8vh;
+    margin-bottom: 1vh;
 }
 
-#location:focus{
+#name:focus{
     border: 2px solid #FB923D; 
     outline: none;
 }
 
-.submit {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 2rem;
+.field-date{
+    margin-top: 2.8vh;
 }
 
-.submit button {
-    font-family: "Montserrat", sans-serif;
-    width: 10%;
-    padding: 0.4vw;
-    border: none;
-    border-radius: 10px;
+input[type="date"] {
+    background-color: #F0F0F0; 
+    color: #545454;            
+    font-size: 1rem;           
+    border: 1px solid #B1B1B1; 
+    border-radius: 10px;        
+    padding: 0.5vw 0.5vw; 
+    outline: none;             
+    box-sizing: border-box;    
+    width: 100%;  
+    cursor: pointer;        
+    font-weight: 500;     
+}
+
+.field{
+    margin-bottom: 2vh;
+}
+
+.custom-file-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
     background-color: #FB923D;
-    color: #FEFEFE;
-    font-weight: 500;
+    color: white;
+    padding: 0.6rem 1.2rem; 
+    border-radius: 10px;
     cursor: pointer;
-    transition: 0.2s;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: background-color 0.3s;
 }
 
-.submit button:hover{
-    background-color: #fa9b4e;
+.custom-file-button:hover {
+    background-color: #e67c1d;
 }
 
-#name{
-    margin-top: 0.5vh;
+.custom-file-button img {
+    width: 0.8vw;
+    height: auto;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+#description{
+    margin-top: 0.3vh;
+    font-family: "Montserrat", sans-serif;
+    width: 100%;
+    height: 14vh;
+    padding: 0.8vw 1vw;
+    border-radius: 10px;
+    border: 1px solid #B1B1B1;
+    background-color: #F0F0F0;
+    font-size: 0.9rem;
+    margin-bottom: 2vh;
+}
+
+#description:focus{
+    border: 2px solid #FB923D; 
+    outline: none;
+}
+
+.add-a-new-place #add {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #FB923D;
+    color: white;
+    padding: 0.6rem 1.2rem; 
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+    border: none;
+}
+
+.add-a-new-place #add:hover {
+    background-color: #e37424;   
+}
+
+.add-a-new-place #add img {
+    width: 0.8vw;                
+    height: auto;
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1vw; 
+  margin-top: auto;
+  padding: 7vh 0;
+}
+
+.footer .button {
+  padding: 0.7rem 3rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-weight: 500;
+}
+
+#done {
+  background-color: #E47F31;
+  color: white;
+}
+
+#done:hover {
+  background-color: #c9712d;
+}
+
+#cancel {
+  background-color: #A0A0A0;
+  color: white;
+}
+
+#cancel:hover {
+  background-color: #cccccc;
 }
