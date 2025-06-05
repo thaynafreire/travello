@@ -142,37 +142,6 @@ input[type="text"]:focus{
     flex-direction: column;
     flex: 1;
 }
-  
-input[type="file"] {
-    display: none;
-}
-
-.custom-file-button {
-    display: inline-flex;
-    align-items: center;
-    background-color: #FB923D;
-    color: white;
-    width: 5.6vw;
-    height: 1.7vw;
-    padding: 1vh 1vw;
-    border-radius: 13px;
-    font-size: 0.8rem;
-    font-weight: 500;
-    margin-top: 0.5vh;
-    cursor: pointer;
-    transition: background-color 0.2s;
-    gap: 10px;
-}
-
-.custom-file-button img {
-    width: 0.9vw;
-    height: auto;
-    object-fit: contain;
-}
-
-.custom-file-button:hover {
-    background-color: #fa9b4e;
-}
 
 #description{
     margin-top: 0.3vh;
@@ -250,4 +219,12 @@ input[type="date"] {
 
 #name{
     margin-top: 0.5vh;
+}
+
+#cover-photo-url{
+    color: #FB923D;
+}
+
+#secondary-photo-url{
+    color: #FB923D;
 }

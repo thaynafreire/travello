@@ -23,70 +23,62 @@
             <img src="https://i.pinimg.com/736x/2c/47/d5/2c47d5dd5b532f83bb55c4cd6f5bd1ef.jpg" alt="Foto de perfil do usuário">
         </div>
     </header>
-    <main>
-        <div class="main-content">
-            <div class="trip-container-header">
-                <h3>New Trip</h3>
-                <select id="category">
-                    <option value="">Category</option>
-                    <!-- opções serão adicionadas via JavaScript -->
-                </select><br>
+  <main>
+    <div class="main-content">
+      <div class="trip-container-header">
+        <h3>New Trip</h3>
+        <select id="category">
+          <option value="">Category</option>
+          <!-- opções via JavaScript -->
+        </select><br />
+      </div>
+
+      <div class="trip-form">
+        <form>
+          <label for="title">Title</label><br />
+          <input type="text" id="title" /><br />
+
+          <div class="double-line">
+            <div class="field">
+              <label for="cover-photo-url">Cover photo URL</label>
+              <input type="text" id="cover-photo-url" placeholder="https://..." />
             </div>
-    
-            <div class="trip-form">
-                <form>
-                    <label for="title">Title</label><br>
-                    <input type="text" id="title"><br>
-    
-                    <div class="double-line">
-                        <div class="field">
-                            <label for="cover-photo" id="label-file">Choose a cover photo for your trip.</label>
-                            <label for="cover-photo" class="custom-file-button">
-                                <img src="img/new-file.png" alt="upload icon">
-                                Add file
-                            </label>
-                            <input type="file" id="cover-photo" accept="image/*">
-                        </div>
-    
-                        <div class="field">
-                            <label for="secondary-photo">Choose a nice photo from your trip.</label>
-                            <label for="cover-photo" class="custom-file-button">
-                                <img src="img/new-file.png" alt="upload icon">
-                                Add file
-                            </label>
-                             <input type="file" id="secondary-photo" accept="image/*">
-                        </div>
-                    </div>
-    
-                    <label for="description">Tell us about your trip.</label><br>
-                    <textarea id="description"></textarea>
-    
-                    <div class="double-line">
-                        <div class="field-date">
-                            <label for="departure-date">Departure date</label><br>
-                            <input type="date" id="departure-date"><br>
-                        </div>
-    
-                        <div class="field-date">
-                            <label for="return-date">Return date</label><br>
-                            <input type="date" id="return-date"><br>
-                        </div>
-                    </div>
-    
-                    <label for="location">Location</label><br>
-                    <input type="text" id="name" placeholder="Name"><br>
-                    <select id="location">
-                        <option value="">Country</option>
-                        <!-- opções serão adicionadas via JavaScript -->
-                    </select><br>
-    
-                    <div class="submit">
-                        <button type="button" class="button" id="submit">Submit</button>
-                    </div>
-                </form>
+
+            <div class="field">
+              <label for="secondary-photo-url">Secondary photo URL</label>
+              <input type="text" id="secondary-photo-url" placeholder="https://..." />
             </div>
-        </div>
-    </main>
+          </div>
+
+          <label for="description">Tell us about your trip.</label><br />
+          <textarea id="description"></textarea>
+
+          <div class="double-line">
+            <div class="field-date">
+              <label for="departure-date">Departure date</label><br />
+              <input type="date" id="departure-date" /><br />
+            </div>
+
+            <div class="field-date">
+              <label for="return-date">Return date</label><br />
+              <input type="date" id="return-date" /><br />
+            </div>
+          </div>
+
+          <label for="location">Location</label><br />
+          <input type="text" id="name" placeholder="Name" /><br />
+          <select id="location">
+            <option value="">Country</option>
+            <!-- opções via JavaScript -->
+          </select><br />
+
+          <div class="submit">
+            <button type="button" class="button" id="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
     
 </body>
 </html>
