@@ -44,13 +44,14 @@ header {
 
 
 header .foto-perfil img {
-    width: clamp(32px, 4vw, 40px); /*responsivo*/
-    height: clamp(32px, 4vw, 40px);
+    width: 2vw;
+    height: auto;
     border-radius: 50%;
     object-fit: cover;
 }
 
 header img{
+    cursor: pointer;
     width: 7.3vw;
     height: auto;
 }

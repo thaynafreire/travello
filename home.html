@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="./js/main.js" defer></script>
+    <script src="./js/home.js" defer type="module"></script>
+    <link rel="stylesheet" href="./style-home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<!-- toastify CSS -->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+<!-- toastify JS -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <title>Travello</title>
+</head>
+<body>
+    <header>
+        <div class="superior">
+            <img src="./img/logo-white.png" alt="logotipo" id="logo-travello">
+            <div class="foto-perfil">
+                <img src="https://i.pinimg.com/736x/2c/47/d5/2c47d5dd5b532f83bb55c4cd6f5bd1ef.jpg" alt="Foto de perfil do usuário">
+            </div>
+        </div>
+
+        <div class="meio">
+            <h4>Hi, username!</h4>
+        </div>
+
+        <div class="inferior">
+            <h2>Find the best place</h2>
+            <img src="img/lupa.png" alt="Lupa" class="icone">
+            <input id="texto" id="nome" class="nome">
+            <button id="pesquisar" class="pesquisar">Search</button>
+        </div>
+    </header>
+    <main>
+
+        <div class="header-main">
+            <h3>Popular destination</h3>
+        
+            <div class="filtros-icone">
+                <select id="category">
+                    <option value="">Category</option>
+                </select>
+        
+                <select id="location">
+                    <option value="">Select a country</option>
+                </select>
+        
+                <img src="img/new-post.png" alt="new post icon">
+            </div>
+        </div>
+        
+
+        <div class="principal">
+            <div class="card-viagem">
+                <img src="img/default-trip.png" alt="Imagem da viagem">
+        
+                <div class="user">
+                    <img src="https://i.pinimg.com/736x/2c/47/d5/2c47d5dd5b532f83bb55c4cd6f5bd1ef.jpg" alt="Foto de perfil do usuário">
+                    <p>username</p>
+                </div>
+        
+                <div class="local">
+                    <h5>Local Name</h5>
+                </div>
+        
+                <div class="local-location">
+                    <img src="img/local.png" alt="Ícone de local">
+                    <p>Address</p>
+                </div>
+            </div>
+        
+            <div class="card-viagem">
+                <img src="img/default-trip.png" alt="Imagem da viagem">
+        
+                <div class="user">
+                    <img src="https://i.pinimg.com/736x/2c/47/d5/2c47d5dd5b532f83bb55c4cd6f5bd1ef.jpg" alt="Foto de perfil do usuário">
+                    <p>username</p>
+                </div>
+        
+                <div class="local">
+                    <h5>Local Name</h5>
+                </div>
+        
+                <div class="local-location">
+                    <img src="img/local.png" alt="Ícone de local">
+                    <p>Address</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+    
+</body>
+</html>

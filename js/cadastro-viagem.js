@@ -167,6 +167,14 @@ document.addEventListener('DOMContentLoaded', () => {
   mostrarFotoPerfil()
 })
 
+  // Ir para home.html ao clicar na logo
+  const logo = document.querySelector('#logo-travello')
+  if (logo) {
+    logo.addEventListener('click', () => {
+      window.location.href = 'home.html'
+    })
+  }
+
 // toast
 function mostrarToast(mensagem, corFundo = "#4CAF50") {
   Toastify({
@@ -223,6 +231,25 @@ async function mostrarFotoPerfil() {
     }
   } catch (error) {
     console.error('Erro ao carregar foto de perfil:', error)
+  }
+}
+
+// Função para buscar localização pelo nome e país
+async function buscarLocalizacao(nome, id_pais) {
+  try {
+    const response = await fetch('http://10.107.134.21:8080/v1/travello/localizacao')
+    const data = await response.json()
+    
+    if (data.localizacao) {
+      const localizacao = data.localizacao.find(loc => 
+        loc.nome === nome && loc.pais[0].id === Number(id_pais)
+      )
+      return localizacao ? localizacao.id : null
+    }
+    return null
+  } catch (error) {
+    console.error('Erro ao buscar localização:', error)
+    return null
   }
 }
 

@@ -30,7 +30,7 @@ export async function carregarPaises() {
     const select = document.getElementById('location')
     if (!select) return // se o elemento não existe, para aqui sem erro
 
-    select.innerHTML = '' // limpa antes de inserir
+    select.innerHTML = '<option value="">Select a country</option>'
 
     const paisesOrdenados = dados.paises.sort((a, b) => a.nome.localeCompare(b.nome))
 
