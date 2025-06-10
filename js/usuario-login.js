@@ -36,8 +36,8 @@ async function login() {
     if (!validarDados(email, senha)) return
 
     const data = { email, senha }
-    const urlLogin = 'http://localhost:8080/v1/travello/usuario/login'
-    const urlUsuarios = 'http://localhost:8080/v1/travello/usuario'
+    const urlLogin = 'http://10.107.134.21:8080/v1/travello/usuario/login'
+    const urlUsuarios = 'http://10.107.134.21:8080/v1/travello/usuario'
 
     const options = {
         method: 'POST', 
