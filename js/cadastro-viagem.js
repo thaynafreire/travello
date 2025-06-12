@@ -190,7 +190,7 @@ function mostrarToast(mensagem, corFundo = "#4CAF50") {
 // carregar categorias
 async function carregarCategorias() {
   try {
-    const response = await fetch('http://10.107.134.21:8080/v1/travello/categoria')
+    const response = await fetch('http://localhost:8080/v1/travello/categoria')
     const dados = await response.json()
 
     const select = document.getElementById('category')
@@ -218,7 +218,7 @@ async function mostrarFotoPerfil() {
   if (!idUsuarioLogado) return
 
   try {
-    const resp = await fetch('http://10.107.134.21:8080/v1/travello/usuario')
+    const resp = await fetch('http://localhost:8080/v1/travello/usuario')
     const responseData = await resp.json()
 
     const usuarios = responseData.usuarios || []
@@ -237,7 +237,7 @@ async function mostrarFotoPerfil() {
 // Função para buscar localização pelo nome e país
 async function buscarLocalizacao(nome, id_pais) {
   try {
-    const response = await fetch('http://10.107.134.21:8080/v1/travello/localizacao')
+    const response = await fetch('http://localhost:8080/v1/travello/localizacao')
     const data = await response.json()
     
     if (data.localizacao) {
@@ -281,7 +281,7 @@ async function cadastrarViagem() {
 
     console.log('📍 Enviando localização:', dadosLocalizacao)
 
-    const respostaLocalizacao = await fetch('http://10.107.134.21:8080/v1/travello/localizacao', {
+    const respostaLocalizacao = await fetch('http://localhost:8080/v1/travello/localizacao', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(dadosLocalizacao)
@@ -316,7 +316,7 @@ async function cadastrarViagem() {
 
     console.log('✈️ Enviando dados da viagem:', dadosViagem)
 
-    const respostaViagem = await fetch('http://10.107.134.21:8080/v1/travello/viagem', {
+    const respostaViagem = await fetch('http://localhost:8080/v1/travello/viagem', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(dadosViagem)

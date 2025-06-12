@@ -15,7 +15,7 @@ async function mostrarFotoPerfil() {
 
     try {
         // procura todos os usuários
-        const resp = await fetch('http://10.107.134.21:8080/v1/travello/usuario')
+        const resp = await fetch('http://localhost:8080/v1/travello/usuario')
         const responseData = await resp.json()
         
         // Acessa a propriedade 'usuarios' do objeto retornado

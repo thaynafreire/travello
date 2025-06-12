@@ -91,7 +91,7 @@ header {
 .inferior .icone {
     position: absolute;
     left: 0.8vw;
-    top: 61%;
+    top: 60%;
     width: 1vw;
     height: auto;
 }
@@ -224,4 +224,198 @@ header {
     width: 16px;
     height: 16px;
     margin-right: 5px;
+}
+
+header-trip {
+    background-color: #61AFFA; 
+    height: 9vh; 
+    display: flex;
+    align-items: center;
+    padding: 0 2vw;
+    justify-content: space-between;
+}
+
+header-trip #logo-trip {
+    cursor: pointer;
+    width: 7.3vw;
+    height: auto;
+}
+
+header-trip .foto-perfil-trip img {
+    width: 3vw;
+    max-width: 40px;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid white;
+}
+
+header-trip p {
+    color: white;
+    font-weight: 500;
+    font-size: 1.2rem;
+    margin-left: 1vw;
+}
+
+/* Main personalizado */
+main-trip {
+    padding: 4vw;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header dentro do main */
+.header-main-trip {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc; 
+    margin-bottom: 3vh;
+}
+
+.header-main-trip h4 {
+    margin-left: 1vh;
+    font-weight: 600;
+    font-size: 3rem;
+    color: #383838;
+}
+
+.header-main-trip h6 {
+    margin-right: 1vh;
+    font-weight: 500;
+    font-size: 1.5rem;
+    color: #FB923D;
+}
+
+/* Container das duas colunas */
+.container-lados-trip {
+    display: flex;
+    gap: 6vw;
+    /* para responsividade */
+    flex-wrap: wrap;
+}
+
+/* Lado esquerdo */
+.lado-esquerdo-trip {
+    margin-left: 1vh;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vh;
+}
+
+.lado-esquerdo-trip img {
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+    object-fit: cover;
+}
+
+/* Nome e localização */
+.name-location-trip {
+    display: flex;
+    align-items: center;
+    gap: 0.5vw;
+    margin-left: 0.5vw;
+}
+
+.name-location-trip img {
+    width: 2.5vh;
+    height: auto;
+    object-fit: contain;
+}
+
+.name-location-trip p {
+    font-size: 1.5rem;
+    color: #545454;
+    font-weight: 600;
+}
+
+/* País */
+#country-trip {
+    margin-left: 2.2vw;
+    font-size: 1.3rem;
+    color: #FB923D;
+    font-weight: 500;
+    margin-bottom: 2vh;
+}
+
+/* Datas */
+.date-trip {
+    padding: 0 4vh;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    gap: 1vw;
+}
+
+.date-trip p {
+    flex: 1;
+    font-size: 1rem;
+    color: #A3A3A3;
+}
+
+#departure-date-trip {
+    text-align: left;
+}
+
+#return-date-trip {
+    text-align: right;
+}
+
+.date-trip img {
+    width: 12vh;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Lado direito */
+.lado-direito-trip {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2vh;
+}
+
+.lado-direito-trip h4 {
+    font-weight: 600;
+    font-size: 2.5rem;
+    color: #545454;
+}
+
+.lado-direito-trip p {
+    font-size: 1.5rem;
+    color: #A3A3A3;
+    line-height: 1.5;
+}
+
+.btn-voltar {
+  padding: 10px 20px;
+  background-color: #61AFFA;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 20px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.btn-voltar:hover {
+  background-color: #4A9DE8;
+}
+
+.container-details {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: white;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.hidden {
+  display: none;
 }
