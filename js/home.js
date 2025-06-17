@@ -16,7 +16,7 @@ if (logo) {
   })
 }
 
-// ir p cadastro-viagem.html ao clicar no ícone
+// ir p cadastro-viagem ao clicar no ícone
 const iconeNovaViagem = document.querySelector('.filtros-icone img')
 if (iconeNovaViagem) {
   iconeNovaViagem.addEventListener('click', () => {
@@ -48,7 +48,7 @@ async function carregarCategorias() {
 
     select.innerHTML = '<option value="">Category</option>'
 
-    const categoriasOrdenadas = dados.categorias.sort((a, b) => a.nome.localeCompare(b.nome))
+    const categoriasOrdenadas = dados.categorias.sort((a, b) => a.nome.localeCompare(b.nome)) // ordena a lista de categorias em ordem alfabética pelo nome, compara os nomes de cada categoria em ordem crescente
 
     categoriasOrdenadas.forEach(categoria => {
       const option = document.createElement('option')
@@ -155,23 +155,23 @@ function criarCardViagem(viagem) {
   card.appendChild(divLocal)
   card.appendChild(divLocation)
 
-  // Adiciona evento de clique para exibir detalhes da viagem
+  // adiciona clique p exibir detalhes da viagem
   card.addEventListener('click', () => exibirDetalhesViagem(viagem))
 
   divPrincipal.appendChild(card)
 }
 
 function exibirDetalhesViagem(viagem) {
-  // Esconde o container principal
+  // esconde o container principal
   const containerPrincipal = document.querySelector('.principal')
   containerPrincipal.classList.add('hidden')
 
-  // Cria o container de detalhes da viagem
+  // cria o container de detalhes da viagem
   const detalhesViagem = document.createElement('div')
   detalhesViagem.id = 'trip-details'
   detalhesViagem.classList.add('container-details')
 
-  // Preenche os dados da viagem no template
+  // preenche os dados da viagem no template
   const template = `
     <header-trip>
       <img src="img/logo-white.png" alt="" id="logo-trip">
@@ -215,7 +215,7 @@ function exibirDetalhesViagem(viagem) {
 
   detalhesViagem.innerHTML = template
 
-  // Adiciona botão de voltar
+  // botão de voltar
   const botaoVoltar = document.createElement('button')
   botaoVoltar.textContent = 'Back'
   botaoVoltar.classList.add('btn-voltar')
@@ -226,7 +226,6 @@ function exibirDetalhesViagem(viagem) {
 
   detalhesViagem.appendChild(botaoVoltar)
 
-  // Adiciona os detalhes da viagem ao body
   document.body.appendChild(detalhesViagem)
 }
 
@@ -242,7 +241,7 @@ async function carregarViagensNaTela() {
   viagens.forEach(criarCardViagem)
 }
 
-//buscar viagens com filtro por nome/país
+//buscar viagens com filtro por nome/pais
 async function pesquisarViagensPorNome(nome) {
   const url = `http://localhost:8080/v1/travello/viagem?nome=${encodeURIComponent(nome)}`
   const resposta = await fetch(url)
@@ -251,7 +250,7 @@ async function pesquisarViagensPorNome(nome) {
   return dados.viagens || []
 }
 
-// Evento de clique no botão "Search"
+// clique no botão 
 const botaoPesquisar = document.getElementById('pesquisar')
 if (botaoPesquisar) {
   botaoPesquisar.addEventListener('click', async () => {

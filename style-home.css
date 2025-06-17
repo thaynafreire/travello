@@ -257,7 +257,6 @@ header-trip p {
     margin-left: 1vw;
 }
 
-/* Main personalizado */
 main-trip {
     padding: 4vw;
     flex: 1;
@@ -265,7 +264,6 @@ main-trip {
     flex-direction: column;
 }
 
-/* Header dentro do main */
 .header-main-trip {
     display: flex;
     justify-content: space-between;
@@ -288,15 +286,14 @@ main-trip {
     color: #FB923D;
 }
 
-/* Container das duas colunas */
+
 .container-lados-trip {
     display: flex;
     gap: 6vw;
-    /* para responsividade */
     flex-wrap: wrap;
 }
 
-/* Lado esquerdo */
+
 .lado-esquerdo-trip {
     margin-left: 1vh;
     width: 30%;
@@ -312,7 +309,6 @@ main-trip {
     object-fit: cover;
 }
 
-/* Nome e localização */
 .name-location-trip {
     display: flex;
     align-items: center;
@@ -332,7 +328,6 @@ main-trip {
     font-weight: 600;
 }
 
-/* País */
 #country-trip {
     margin-left: 2.2vw;
     font-size: 1.3rem;
@@ -341,7 +336,6 @@ main-trip {
     margin-bottom: 2vh;
 }
 
-/* Datas */
 .date-trip {
     padding: 0 4vh;
     display: flex;
@@ -370,7 +364,6 @@ main-trip {
     object-fit: contain;
 }
 
-/* Lado direito */
 .lado-direito-trip {
     flex: 1;
     display: flex;

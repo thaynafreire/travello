@@ -1,6 +1,6 @@
 'use strict'
 
-// Função para exibir toast
+// função p exibir toast
 function mostrarToast(mensagem, corFundo = "#4CAF50") {
     Toastify({
         text: mensagem,
@@ -14,7 +14,6 @@ function mostrarToast(mensagem, corFundo = "#4CAF50") {
     }).showToast()
 }
 
-// Validação de campos
 function validarDados(email, senha) {
     console.log('Validando dados:', { email, senha })
     if (email === '' || senha === '') {
@@ -24,7 +23,7 @@ function validarDados(email, senha) {
     return true 
 }
 
-// Função principal de login
+// função login
 async function login() {
     console.log('Iniciando função login...')
 
